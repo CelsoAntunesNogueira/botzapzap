@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Enviar para o servidor (backend Flask)
     const BASE_URL = window.location.hostname === "https://botzapzap-pm0m.onrender.com" ? "http://127.0.0.1:5000" : "https://botzapzap.netlify.app";    
-    fetch("${BASE_URL}/webhook", {
+    fetch("https://botzapzap-pm0m.onrender.com/webhook", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
