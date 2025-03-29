@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const contacts = document.querySelectorAll(".contact");
     const chatHeader = document.querySelector(".chat-header h3");
 
-    let activeContact = "Bot que realiza pedidos"; // Nome do contato ativo
+    let activeContact = "Bot Zap Zap"; // Nome do contato ativo
     chatHeader.textContent = activeContact;
 
     // Enviar mensagem ao clicar no botão
