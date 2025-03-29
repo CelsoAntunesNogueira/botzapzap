@@ -43,7 +43,7 @@ def resetar_pedido():
 
 
 # Esse é o método principal, ele é acionado toda vez que uma mensagem é enviada a sandbox do twilio
-@app.route("/webhook", methods=['GET', 'POST'])
+@app.route("https://botzapzap-pm0m.onrender.com/webhook", methods=['GET', 'POST'])
 def responder_msg():
     global etapa, escolha_atual, mensagem_inicial  # identifica as variáveis como globais
 
