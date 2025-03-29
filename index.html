@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <header>
+                <h2>WhatsApp Clone</h2>
+            </header>
+            <div class="contacts">
+                <div class="contact" id="contact1">Pará Lanches</div>
+                <div class="contact" id="contact2">
+                    Tião Mecânico
+                    <div class="audio-message">
+                        🎙️ 7:24 <span class="unread-badge">1</span>
+                    </div>
+                </div>
+                
+                <div class="contact unread" id="contact3">
+                    Amor S2
+                    <div class="unread-msg">
+                        Oi, precisamos conversar...
+                        <span class="unread-badge">1</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="chat">
+            <header class="chat-header">
+                <h3 id="chat-title">Bot</h3>
+            </header>
+            <div class="chat-window" id="chat-window">
+                <div class="message received">Olá! Como vai?</div>
+                <div class="message sent">Oi! Tudo bem e você?</div>
+            </div>
+            <footer class="chat-footer">
+                <input type="text" id="message-input" placeholder="Digite uma mensagem...">
+                <button id="send-button">Enviar</button>
+            </footer>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+</html>
