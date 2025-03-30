@@ -60,6 +60,24 @@ def webhook():
     # Código do bot aqui...
 
 def responder_msg():
+    def responder_msg():
+    data = request.get_json()
+
+    # Verifica se os dados foram recebidos corretamente
+    if not data:
+        return jsonify({"error": "Dados não recebidos"}), 400
+
+    try:
+        mensagem_recebida = data.get("mensagem", "")
+
+        # Inicializa a variável resposta corretamente
+        resposta = {"message": "Mensagem recebida", "conteudo": mensagem_recebida}
+
+        return jsonify(resposta)
+
+    except Exception as e:
+        print("Erro:", e)
+        return jsonify({"error": "Erro interno no servidor"}), 500
     global etapa, escolha_atual, mensagem_inicial  # identifica as variáveis como globais
 
 
