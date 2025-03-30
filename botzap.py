@@ -2,7 +2,7 @@ from flask import Flask, request
 from datetime import datetime
 from time import sleep
 from flask_cors import CORS
-
+import os
 # Variaveis
 hora_atual = int(datetime.now().time().strftime("%H"))  # pega a hora do sistema
 mensagem_inicial = ""  # recebe bom dia, boa tarde ou boa noite de acordo com a hora
@@ -43,7 +43,7 @@ def resetar_pedido():
 
 
 # Esse é o método principal, ele é acionado toda vez que uma mensagem é enviada a sandbox do twilio
-@app.route("https://botzapzap-pm0m.onrender.com/webhook", methods=['GET', 'POST'])
+@app.route("/webhook", methods=[ 'POST'])
 def responder_msg():
     global etapa, escolha_atual, mensagem_inicial  # identifica as variáveis como globais
 
