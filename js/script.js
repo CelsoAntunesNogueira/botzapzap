@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.text())
     .then(text => {
         // Exibe a resposta do bot na tela
+      try{  
         const data = JSON.parse(text);
         const responseElement = document.createElement("div");
         responseElement.classList.add("message", "received");
@@ -59,11 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
         chatWindow.appendChild(responseElement);
         scrollToBottom();
     } catch (error){
-         console.error("Erro no JSON",error);
+         console.error("Erro no JSON",error);}
     })
     .catch(error => console.error('Error:', error));
         
-    }
+}
 
     function scrollToBottom() {
         chatWindow.scrollTop = chatWindow.scrollHeight;
