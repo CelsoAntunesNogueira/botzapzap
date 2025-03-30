@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollToBottom();
 
         // Enviar para o servidor (backend Flask)
-    const BASE_URL = window.location.hostname === "https://botzapzap-pm0m.onrender.com";    
+    const BASE_URL = "https://botzapzap-pm0m.onrender.com";    
     fetch(`${BASE_URL}/webhook`, {
         method: "POST",
         headers: {
