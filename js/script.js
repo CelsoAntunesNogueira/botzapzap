@@ -41,22 +41,25 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollToBottom();
 
         // Enviar para o servidor (backend Flask)
-    const BASE_URL = window.location.hostname === "https://botzapzap-pm0m.onrender.com" ? "http://127.0.0.1:5000" : "https://botzapzap.netlify.app";    
-    fetch("https://botzapzap-pm0m.onrender.com/webhook", {
+    const BASE_URL = window.location.hostname === "https://botzapzap-pm0m.onrender.com";    
+    fetch(`${BASE_URL}/webhook`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ Body: messageText })
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(response => response.text())
+    .then(text => {
         // Exibe a resposta do bot na tela
+        const data = JSON.parse(text);
         const responseElement = document.createElement("div");
         responseElement.classList.add("message", "received");
         responseElement.textContent = data.response;
         chatWindow.appendChild(responseElement);
         scrollToBottom();
+    } catch (error){
+         console.error("Erro no JSON",error);
     })
     .catch(error => console.error('Error:', error));
         
