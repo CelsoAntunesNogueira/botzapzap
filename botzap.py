@@ -62,7 +62,7 @@ def responder_msg():
         mensagem_inicial = "Boa noite"
 
     # Recebe a mensagem do usuário e inicia a resposta
-    data = request.get_json()
+    data = request.get_json(silent=True) or {}
     client_msg = data.get('Body', "").lower()
     resposta = responder_msg()
     # a escolha atual recebe a msg que a pessoa digitou(string) e converte para int
